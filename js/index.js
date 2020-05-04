@@ -60,6 +60,7 @@ const imgSelector = (id, source) => {
 
 
 // ---------------------------- Nav Begins ----------------------------
+
 // Selected all links under nav
 const navLinks = document.querySelector('nav').querySelectorAll('a');
 
@@ -79,10 +80,34 @@ imgSelector('logo', siteContent['nav']['img-src']);
 // ---------------------------- CTA Begins ----------------------------
 
 const ctaText = document.querySelector('.cta-text');
-ctaText.querySelector('h1').innerHTML = 'DOM<br> Is<br> Awesome';
-ctaText.querySelector('button').textContent = 'Get Started';
+ctaText.querySelector('h1').innerHTML = siteContent['cta']['h1'];
+ctaText.querySelector('button').textContent = siteContent['cta']['button'];
 
 // CTA Logo
 imgSelector('cta', siteContent['cta']['img-src']);
 
 // ---------------------------- CTA Ends ----------------------------
+
+// ---------------------------- Top Content Begins ----------------------------
+
+const topContentText = document.querySelector('.top-content').querySelectorAll('.text-content');
+
+// First Div
+topContentText[0].querySelector('h4').textContent = siteContent['main-content']['features-h4'];
+topContentText[0].querySelector('p').textContent = siteContent['main-content']['features-content'];
+
+
+// Second Div
+topContentText[1].querySelector('h4').textContent = siteContent['main-content']['about-h4'];
+topContentText[1].querySelector('p').textContent = siteContent['main-content']['about-content'];
+
+// Logo
+imgSelector('middle', siteContent['main-content']['middle-img-src']);
+
+// ---------------------------- Top Content Ends ----------------------------
+
+// ---------------------------- Bottom Content Begins ----------------------------
+
+
+
+// ---------------------------- Bottom Content Ends ----------------------------
