@@ -80,7 +80,7 @@ imgSelector('logo', siteContent['nav']['img-src']);
 // ---------------------------- CTA Begins ----------------------------
 
 const ctaText = document.querySelector('.cta-text');
-ctaText.querySelector('h1').innerHTML = siteContent['cta']['h1'];
+ctaText.querySelector('h1').textContent = siteContent['cta']['h1'];
 ctaText.querySelector('button').textContent = siteContent['cta']['button'];
 
 // CTA Logo
@@ -108,6 +108,18 @@ imgSelector('middle', siteContent['main-content']['middle-img-src']);
 
 // ---------------------------- Bottom Content Begins ----------------------------
 
+const bottomContentText = document.querySelector('.bottom-content').querySelectorAll('.text-content');
 
+// First Div
+bottomContentText[0].querySelector('h4').textContent = siteContent['main-content']['services-h4'];
+bottomContentText[0].querySelector('p').textContent = siteContent['main-content']['services-content'];
+
+// Second Div
+bottomContentText[1].querySelector('h4').textContent = siteContent['main-content']['product-h4'];
+bottomContentText[1].querySelector('p').textContent = siteContent['main-content']['product-content'];
+
+// Third Div
+bottomContentText[2].querySelector('h4').textContent = siteContent['main-content']['vision-h4'];
+bottomContentText[2].querySelector('p').textContent = siteContent['main-content']['vision-content'];
 
 // ---------------------------- Bottom Content Ends ----------------------------
