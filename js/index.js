@@ -144,3 +144,32 @@ const footerText = document.querySelector('footer').querySelector('p');
 footerText.textContent = siteContent['footer']['copyright'];
 
 // ---------------------------- Footer Ends ----------------------------
+
+// Task 3
+
+// Create two more nav items
+
+const firstProps = {
+  href: '#',
+  textContent: 'First Link'
+}
+
+const secondProps = {
+  href: '#',
+  textContent: 'Second Link'
+}
+
+const first = document.createElement('a');
+const second = document.createElement('a');
+
+first.href = firstProps.href;
+first.textContent = firstProps.textContent;
+
+second.href = secondProps.href;
+second.textContent = secondProps.textContent;
+
+document.querySelector('nav').prepend(second);
+document.querySelector('nav').prepend(first);
+
+// Turn nav links green
+document.querySelector('nav').querySelectorAll('a').forEach(x => x.style.color = 'green');
