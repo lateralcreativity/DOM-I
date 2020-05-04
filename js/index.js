@@ -38,5 +38,51 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+// let logo = document.getElementById("logo-img");
+// logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+/*
+Changed title from 
+Great Idea DOM! 
+to 
+Great Idea! 
+*/
+const title = document.querySelector('title');
+title.textContent = 'Great Idea!';
+
+const imgSelector = (id, source) => {
+  // Get Element by ID
+  const logo = document.querySelector(`#${id}-img`);
+  
+  // Assign src of image to given value 
+  return logo.setAttribute('src', source);
+}
+
+
+// ---------------------------- Nav Begins ----------------------------
+// Selected all links under nav
+const navLinks = document.querySelector('nav').querySelectorAll('a');
+
+// New array with values under nav in the siteContent object
+const siteNavValues = Object.values(siteContent.nav);
+
+// Looped through each link and set its text content to the stored object values
+navLinks.forEach((x, index) => {
+  x.textContent = siteNavValues[index];
+});
+
+// Nav Logo
+imgSelector('logo', siteContent['nav']['img-src']);
+
+// ---------------------------- Nav Ends ----------------------------
+
+// ---------------------------- CTA Begins ----------------------------
+
+const ctaText = document.querySelector('.cta-text');
+ctaText.querySelector('h1').innerHTML = 'DOM<br> Is<br> Awesome';
+ctaText.querySelector('button').textContent = 'Get Started';
+
+// CTA Logo
+imgSelector('cta', siteContent['cta']['img-src']);
+
+// ---------------------------- CTA Ends ----------------------------
