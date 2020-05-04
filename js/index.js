@@ -173,3 +173,10 @@ document.querySelector('nav').prepend(first);
 
 // Turn nav links green
 document.querySelector('nav').querySelectorAll('a').forEach(x => x.style.color = 'green');
+
+// Stretch
+
+const footer = document.querySelector('footer');
+footer.style.padding = '25px';
+footer.style.margin = '0';
+footer.style.backgroundColor = '#A9A9B0';
