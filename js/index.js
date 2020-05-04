@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM<br> Is<br> Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -28,7 +28,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street <br>Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -80,7 +80,7 @@ imgSelector('logo', siteContent['nav']['img-src']);
 // ---------------------------- CTA Begins ----------------------------
 
 const ctaText = document.querySelector('.cta-text');
-ctaText.querySelector('h1').textContent = siteContent['cta']['h1'];
+ctaText.querySelector('h1').innerHTML = siteContent['cta']['h1'];
 ctaText.querySelector('button').textContent = siteContent['cta']['button'];
 
 // CTA Logo
@@ -123,3 +123,24 @@ bottomContentText[2].querySelector('h4').textContent = siteContent['main-content
 bottomContentText[2].querySelector('p').textContent = siteContent['main-content']['vision-content'];
 
 // ---------------------------- Bottom Content Ends ----------------------------
+
+// ---------------------------- Contact Begins ----------------------------
+
+const contact = document.querySelector('.contact');
+const contactContent = Array.from(contact.querySelectorAll('p'));
+const contactValues = Object.values(siteContent.contact);
+
+contact.querySelector('h4').textContent = contactValues[0];
+
+contactContent.forEach((x, index) => {
+  x.innerHTML = contactValues[index + 1];
+})
+
+// ---------------------------- Contact Ends ----------------------------
+
+// ---------------------------- Footer Begins ----------------------------
+
+const footerText = document.querySelector('footer').querySelector('p');
+footerText.textContent = siteContent['footer']['copyright'];
+
+// ---------------------------- Footer Ends ----------------------------
